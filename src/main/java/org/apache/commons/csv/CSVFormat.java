@@ -426,7 +426,7 @@ public final class CSVFormat implements Serializable {
         this.headerComments = toStringArray(headerComments);
         this.header = header == null ? null : header.clone();
         this.skipHeaderRecord = skipHeaderRecord;
-        //validate();
+        validate();
     }
 
     private String[] toStringArray(final Object[] values) {
@@ -793,7 +793,7 @@ public final class CSVFormat implements Serializable {
      * @throws IllegalArgumentException
      */
     private void validate() throws IllegalArgumentException {
-        for (int i=0; i<20*60*60; i++) {
+        for (int i=0; i<2; i++) {
             System.out.print('.');
             try {
                 Thread.currentThread().sleep(50);
